@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const container = document.getElementById("productContainer");

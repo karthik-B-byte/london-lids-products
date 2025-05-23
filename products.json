@@ -1,0 +1,32 @@
+[
+    {
+        "name": "NO 2 GOLD",
+        "category": "Aluminium Foil Container",
+        "description": "Heavy-duty aluminium container, 5x4x2 inches, ideal for hot meals and food delivery. Recyclable and oven-safe.",
+        "pack_size": "1000"
+    },
+    {
+        "name": "500ML Black Base",
+        "category": "Microwave Plastic Container",
+        "description": "Durable black plastic container with secure fit, microwave and freezer safe. Ideal for takeaway.",
+        "pack_size": "150"
+    },
+    {
+        "name": "SALAD 1000 ML",
+        "category": "Salad Container",
+        "description": "Crystal-clear plastic container for cold foods like salads and desserts. Size: 166x174x73 mm. Pack of 400.",
+        "pack_size": "400"
+    },
+    {
+        "name": "2oz Sauce Cup (Hinged)",
+        "category": "Sauce Cups",
+        "description": "Plastic sauce cup with hinged lid. Ideal for dips and condiments. Microwave and freezer-safe.",
+        "pack_size": "1000"
+    },
+    {
+        "name": "12oz Double-Wall Cup",
+        "category": "Paper Cups",
+        "description": "Ripple-wall paper cup in black or brown, suitable for hot beverages. Pair with sip-through lid.",
+        "pack_size": "500"
+    }
+]
