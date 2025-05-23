@@ -1,1 +1,1 @@
-console.log("script.js loaded");
+// Insert final JS manually if needed
