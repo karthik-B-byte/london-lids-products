@@ -1,3 +1,4 @@
+
 body {
   background-color: #162029;
   color: white;
@@ -16,7 +17,7 @@ header {
 h1, h2, h3, h4 {
   color: #e4a342;
 }
-input#searchInput, select#categoryFilter {
+input#searchInput {
   width: 80%;
   max-width: 500px;
   padding: 0.5rem;
@@ -54,19 +55,11 @@ footer {
   background-color: #10171e;
   font-size: 0.9rem;
 }
-.search-filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-@media (min-width: 769px) {
-  .search-filter {
-    flex-direction: row;
-    justify-content: center;
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
   }
-  input#searchInput,
-  select#categoryFilter {
-    margin: 0;
+  input#searchInput {
+    width: 90%;
   }
 }
