@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>London Lids Product Catalog</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <script defer src="script/script.js"></script>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="London Lids Logo" class="logo"/>
+    <img src="images/logo_LLL_white.png" alt="London Lids Logo" class="logo"/>
     <h1>London Lids Limited</h1>
     <p>Manufacturers & Suppliers of Catering Disposables</p>
-    <input type="text" id="searchInput" placeholder="Search products..." />
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Aluminium Foil Containers">Aluminium</option>
+        <option value="Plastic Containers">Plastic</option>
+        <option value="Paper Products">Paper</option>
+        <option value="Bagasse Products">Bagasse</option>
+      </select>
+    </div>
   </header>
   <main><div id="catalog"></div></main>
   <footer id="contact">
