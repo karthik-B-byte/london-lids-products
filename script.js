@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const data = [
+  const data = [ /* FULL DATA STARTS */
     {
       category: "Aluminium Foil Containers",
       products: [
@@ -211,17 +211,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       ]
     }
-  ];
+  ]; // END OF DATA
 
   const catalog = document.getElementById("catalog");
   const searchInput = document.getElementById("searchInput");
-  const categoryFilter = document.getElementById("categoryFilter");
 
-  const renderCatalog = (filter = "", selectedCategory = "") => {
+  const renderCatalog = (filter = "") => {
     catalog.innerHTML = "";
     data.forEach(({ category, products }) => {
-      if (selectedCategory && category !== selectedCategory) return;
-
       const categoryDiv = document.createElement("div");
       categoryDiv.className = "category";
       const catHeader = document.createElement("h2");
@@ -272,23 +269,16 @@ document.addEventListener("DOMContentLoaded", () => {
   catalog.addEventListener("click", (e) => {
     if (e.target.classList.contains("expandable")) {
       const next = e.target.nextElementSibling;
-      if (next) next.classList.toggle("open");
+      if (next) {
+        next.classList.toggle("open");
+      }
     }
   });
 
-  const updateFilter = () => {
-    const filter = searchInput.value.trim().toLowerCase();
-    const selectedCategory = categoryFilter?.value || "";
-    renderCatalog(filter, selectedCategory);
-  };
-
-  if (searchInput) {
-    searchInput.addEventListener("input", updateFilter);
-  }
-
-  if (categoryFilter) {
-    categoryFilter.addEventListener("change", updateFilter);
-  }
+  searchInput.addEventListener("input", (e) => {
+    const filter = e.target.value.trim().toLowerCase();
+    renderCatalog(filter);
+  });
 
   renderCatalog();
 });
