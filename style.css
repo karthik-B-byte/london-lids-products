@@ -1,3 +1,4 @@
+
 body {
   background-color: #162029;
   color: white;
@@ -23,8 +24,6 @@ input#searchInput {
   margin: 1rem auto;
   display: block;
   font-size: 1rem;
-  border-radius: 4px;
-  border: none;
 }
 .category, .product {
   padding: 1rem 2rem;
