@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     }
   ];
-
   const catalog = document.getElementById("catalog");
   const searchInput = document.getElementById("searchInput");
 
