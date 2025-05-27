@@ -1,14 +1,11 @@
 
 # London Lids Product Catalog
 
-## How to Use
-Upload the files to GitHub and enable GitHub Pages to see the live product catalog site.
+## How to Deploy
 
-## Features
-- Fully expandable product categories
-- Bullet-point product specs
-- Live search by keyword
-- Mobile responsive design
+1. Upload the contents of this ZIP to your GitHub repo.
+2. Go to Settings > Pages.
+3. Set branch to `main` and folder to `/root`.
+4. Click Save and access the live site.
 
-## Contact
-info@londonlidsltd.com
+Enjoy!
