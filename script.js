@@ -1,7 +1,4 @@
-// Final script.js with all product data, expand/collapse, and search
-
-// When DOM is ready
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const data = [
     {
       category: "Aluminium Foil Containers",
@@ -11,11 +8,19 @@ window.addEventListener("DOMContentLoaded", () => {
           details: [
             {
               name: "No 2",
-              specs: ["Material: Aluminium", "Standard Quality", "Size: 5\" x 4\" x 2\"", "Pack: 1000"]
+              specs: [
+                "Material: Aluminium",
+                "Standard Quality",
+                "Size: 5\" x 4\" x 2\"",
+                "Pack: 1000"
+              ]
             },
             {
               name: "No 6A",
-              specs: ["Standard Quality", "Pack: 1000"]
+              specs: [
+                "Standard Quality",
+                "Pack: 1000"
+              ]
             }
           ]
         },
@@ -60,8 +65,8 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           name: "Sauce Cups",
           details: [
-            { name: "Hinged Lid", specs: ["1oz, 2oz, 4oz, 6oz"] },
-            { name: "Separate Lid", specs: ["2oz, 4oz"] }
+            { name: "Hinged Lid", specs: ["1oz", "2oz", "4oz", "6oz"] },
+            { name: "Separate Lid", specs: ["2oz", "4oz"] }
           ]
         },
         {
@@ -78,32 +83,50 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           name: "Paper Cups",
           details: [
-            { name: "Ripple Cups", specs: ["8oz, 12oz", "Black, Brown", "500 cups", "1000 lids"] }
+            {
+              name: "Ripple Cups",
+              specs: ["8oz", "12oz", "Colors: Black, Brown", "500 cups", "1000 lids"]
+            }
           ]
         },
         {
           name: "Napkins & Serviettes",
           details: [
-            { name: "Options", specs: ["Single Ply", "40x40 8-fold", "33x33"] }
+            {
+              name: "Options",
+              specs: ["Single Ply", "40x40 8-fold", "33x33"]
+            }
           ]
         },
         {
           name: "Centerfeed Rolls",
           details: [
-            { name: "Tissue Rolls", specs: ["Heavy Duty", "Economy"] }
+            {
+              name: "Tissue Rolls",
+              specs: ["Heavy Duty", "Economy"]
+            }
           ]
         },
         {
-          name: "Foil & Cling",
+          name: "Foil & Cling Film",
           details: [
-            { name: "Foil", specs: ["450mmx75m", "300mmx75m"] },
-            { name: "Cling Film", specs: ["450mmx300m", "300mmx300m"] }
+            {
+              name: "Foil",
+              specs: ["450mm x 75m", "300mm x 75m"]
+            },
+            {
+              name: "Cling Film",
+              specs: ["450mm x 300m", "300mm x 300m"]
+            }
           ]
         },
         {
           name: "Paper Bags",
           details: [
-            { name: "Variety", specs: ["5x5 to 12x12", "Kraft & White Sulphate"] }
+            {
+              name: "Variety",
+              specs: ["5x5 to 12x12", "Kraft & White Sulphate"]
+            }
           ]
         }
       ]
@@ -114,19 +137,28 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           name: "Plates & Bowls",
           details: [
-            { name: "Range", specs: ["8oz bowl", "9\"/10\" plates", "4-Comp, 6-Comp"] }
+            {
+              name: "Range",
+              specs: ["8oz bowl", "9\"/10\" plates", "4-Comp, 6-Comp"]
+            }
           ]
         },
         {
           name: "Burger Boxes",
           details: [
-            { name: "Sizes", specs: ["6x6\"", "7x5\"", "9x6\"", "200 packs"] }
+            {
+              name: "Sizes",
+              specs: ["6x6\"", "7x5\"", "9x6\"", "200 packs"]
+            }
           ]
         },
         {
           name: "Straws",
           details: [
-            { name: "Sizes", specs: ["6mm", "8mm", "10mm", "5000 pcs"] }
+            {
+              name: "Sizes",
+              specs: ["6mm", "8mm", "10mm", "Pack of 5000"]
+            }
           ]
         }
       ]
@@ -136,26 +168,25 @@ window.addEventListener("DOMContentLoaded", () => {
   const catalog = document.getElementById("catalog");
   const searchInput = document.getElementById("searchInput");
 
-  function render(filter = "") {
+  function renderCatalog(filter = "") {
     catalog.innerHTML = "";
     data.forEach(({ category, products }) => {
-      const categoryDiv = document.createElement("div");
-      categoryDiv.className = "category";
-      const h2 = document.createElement("h2");
-      h2.textContent = category;
-      h2.classList.add("expandable");
-      categoryDiv.appendChild(h2);
+      const catDiv = document.createElement("div");
+      const catTitle = document.createElement("h2");
+      catTitle.textContent = category;
+      catTitle.className = "expandable";
+      catDiv.appendChild(catTitle);
 
       const productList = document.createElement("div");
       productList.className = "product-list";
 
       products.forEach(({ name, details }) => {
-        const productDiv = document.createElement("div");
-        productDiv.className = "product";
-        const h3 = document.createElement("h3");
-        h3.textContent = name;
-        h3.classList.add("expandable");
-        productDiv.appendChild(h3);
+        const prodDiv = document.createElement("div");
+        prodDiv.className = "product";
+        const prodTitle = document.createElement("h3");
+        prodTitle.textContent = name;
+        prodTitle.className = "expandable";
+        prodDiv.appendChild(prodTitle);
 
         const detailList = document.createElement("div");
         detailList.className = "details";
@@ -165,40 +196,39 @@ window.addEventListener("DOMContentLoaded", () => {
           const match = !filter || lower.includes(filter) || specs.some(s => s.toLowerCase().includes(filter));
           if (match) {
             const itemDiv = document.createElement("div");
-            const h4 = document.createElement("h4");
-            h4.textContent = name;
+            const itemTitle = document.createElement("h4");
+            itemTitle.textContent = name;
             const ul = document.createElement("ul");
             specs.forEach(spec => {
               const li = document.createElement("li");
               li.textContent = spec;
               ul.appendChild(li);
             });
-            itemDiv.appendChild(h4);
+            itemDiv.appendChild(itemTitle);
             itemDiv.appendChild(ul);
             detailList.appendChild(itemDiv);
           }
         });
 
-        productDiv.appendChild(detailList);
-        productList.appendChild(productDiv);
+        prodDiv.appendChild(detailList);
+        productList.appendChild(prodDiv);
       });
 
-      categoryDiv.appendChild(productList);
-      catalog.appendChild(categoryDiv);
+      catDiv.appendChild(productList);
+      catalog.appendChild(catDiv);
     });
   }
 
-  catalog.addEventListener("click", e => {
+  catalog.addEventListener("click", (e) => {
     if (e.target.classList.contains("expandable")) {
       const next = e.target.nextElementSibling;
       if (next) next.classList.toggle("open");
     }
   });
 
-  searchInput.addEventListener("input", e => {
-    render(e.target.value.trim().toLowerCase());
+  searchInput.addEventListener("input", (e) => {
+    renderCatalog(e.target.value.trim().toLowerCase());
   });
 
-  render();
+  renderCatalog();
 });
-// script.js placeholder — real logic will be added after extraction
